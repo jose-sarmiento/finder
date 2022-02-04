@@ -1,7 +1,7 @@
 import React, { useEffect, useContext, useReducer } from 'react'
 import { reducer } from './reducer'
 require('dotenv').config()
-
+ 
 export const AppContext = React.createContext()
 
   const initialsState = {
