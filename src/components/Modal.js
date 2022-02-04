@@ -11,6 +11,10 @@ const Modal = ({ isOpen, setIsOpen }) => {
 
 	const handleFavoriteRemove = (id) => {
 		dispatch({ type: "REMOVE_ITEM_TO_STORAGE", payload: id });
+		localStorage.setItem(
+	        "moviedb.favorites",
+	        JSON.stringify(favorites.filter(x => x.id !== id))
+	      );
 	};
 
 	return (
