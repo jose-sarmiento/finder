@@ -32,4 +32,4 @@ npm start
 ```
 ###Links
 
-[finder](http://localhost/)
+[Site link](https://find-er.netlify.app/)
