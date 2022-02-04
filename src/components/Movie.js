@@ -15,16 +15,30 @@ function Movie(props) {
   const isFavorite = (id) => {
     return favorites.find((f) => f.id === id);
   }
+
   const handleFavoriteAdd = (e) => {
+    e.stopPropagation()
     e.preventDefault()
-    dispatch({
-      type: "ADD_ITEM_TO_STORAGE",
-      payload: { id, original_title, poster_path },
-    });
-    localStorage.setItem(
-      "moviedb.favorites",
-      JSON.stringify([...favorites, { id, original_title, poster_path }])
-    );
+
+    if(isFavorite(id)) {
+      dispatch({
+        type: "REMOVE_ITEM_TO_STORAGE",
+        payload: id,
+      });
+      localStorage.setItem(
+        "moviedb.favorites",
+        JSON.stringify(favorites.filter(x => x.id !== id))
+      );
+    } else {
+      dispatch({
+        type: "ADD_ITEM_TO_STORAGE",
+        payload: { id, original_title, poster_path },
+      });
+      localStorage.setItem(
+        "moviedb.favorites",
+        JSON.stringify([...favorites, { id, original_title, poster_path }])
+      );
+    }
   };
 
   const handleOnClick = useCallback(() => {

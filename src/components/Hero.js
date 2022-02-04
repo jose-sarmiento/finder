@@ -7,6 +7,7 @@ function Hero() {
   const { popularIsLoading, top5 } = state 
 
   const focus = () => {
+    console.log('focus')
     dispatch({ type: 'SET_FOCUS' })
   }
 
