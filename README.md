@@ -1,5 +1,7 @@
 # Finder
-A movie searching site. This is a client side project for TMDb api
+A movie searching site. It uses TMDb API to list movies, display details and searching functionality.
+
+[see project live](https://finder-pi.vercel.app/)
 
 ### Features
 
@@ -30,6 +32,3 @@ Start application
 ```
 npm start
 ```
-### Links
-
-[Site link](https://find-er.netlify.app/)
